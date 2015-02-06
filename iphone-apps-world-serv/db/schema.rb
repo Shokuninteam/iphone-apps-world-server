@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150205022058) do
   create_table "apps", force: :cascade do |t|
     t.string   "name", null: false
     t.decimal  "price"
+    t.string   "url"
     t.text     "description", null: false
     t.text     "analysis"
     t.text     "pros"

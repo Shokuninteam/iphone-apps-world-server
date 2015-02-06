@@ -23,6 +23,7 @@ apps = App.create([
  		analysis: "blablabla analysis twitter1",
  		pros: "blabla pros1",
  		cons: "blabla cons1",
+ 		url: "https://itunes.apple.com/us/app/twitter/id333903271?mt=8"
  		category: categories.first,
  		released: true
  	},
@@ -34,6 +35,7 @@ apps = App.create([
  		pros: "blabla pro youtube",
  		cons: "blabla con youtube",
  		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8"
  		category: categories.first
  	}
  ])
