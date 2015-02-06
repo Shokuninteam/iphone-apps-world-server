@@ -10,6 +10,10 @@ module IphoneAppsWorldServ
   class Application < Rails::Application        
 
 
+config.action_dispatch.default_headers.merge!({
+  'Access-Control-Allow-Origin' => '*',
+  'Access-Control-Request-Method' => '*'
+})
     #
 
     # Settings in config/environments/* take precedence over those specified here.
