@@ -12,7 +12,13 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = App.where(released: true, name:params[:name]).first
-		render json: @article
+		@pros = Pro.where(app_id: @article)
+    	@cons = Con.where(app_id: @article)
+    	render json: {
+    		article: @article,
+    		pros: @pros,
+    		cons: @cons
+    	}
 	end
 
 	def showArticlesByCat
