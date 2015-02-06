@@ -99,3 +99,6 @@ Top10.create([
 		rank:1
 	}
 ])
+
+User.create!(email: "ishu121@hotmail.com", password: "dragon66")
+User.create!(email: "f.bassard@gmail.com", password: "kapibara13", admin: true)

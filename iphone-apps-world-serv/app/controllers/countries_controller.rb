@@ -1,4 +1,5 @@
-class CountriesController < ApplicationController
+class CountriesController < AdminsController
+  
   def new
   end
 

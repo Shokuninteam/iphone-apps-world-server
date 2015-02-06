@@ -1,2 +1,3 @@
-class ConsController < ApplicationController
+class ConsController < AdminsController
+	
 end

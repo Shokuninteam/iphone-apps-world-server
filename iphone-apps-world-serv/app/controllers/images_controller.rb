@@ -1,4 +1,5 @@
-class ImagesController < ApplicationController
+class ImagesController < AdminsController
+  
   def new
   end
 

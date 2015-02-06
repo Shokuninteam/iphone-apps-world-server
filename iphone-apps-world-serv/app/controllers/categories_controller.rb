@@ -1,4 +1,5 @@
-class CategoriesController < ApplicationController
+class CategoriesController < AdminsController
+  
   def new
   end
 

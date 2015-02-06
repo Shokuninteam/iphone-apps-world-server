@@ -1,2 +1,3 @@
-class ProsController < ApplicationController
+class ProsController < AdminsController
+	
 end

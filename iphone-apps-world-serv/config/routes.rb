@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
 
-  root 'global#index'
+  root to: 'globals#index'
 
   resources :categories do
     resources :apps do
