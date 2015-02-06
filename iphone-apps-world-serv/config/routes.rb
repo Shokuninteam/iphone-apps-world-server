@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'articles/index'
 
   get 'welcome/index'
 
 
-  root 'welcome#index'
+  root 'global#index'
 
   resources :categories do
     resources :apps do

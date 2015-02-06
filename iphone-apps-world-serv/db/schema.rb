@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206103538) do
+ActiveRecord::Schema.define(version: 20150206210258) do
 
   create_table "apps", force: :cascade do |t|
     t.string   "name",                        null: false
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20150206103538) do
     t.string   "url"
     t.text     "description",                 null: false
     t.text     "analysis"
-   # t.integer  "pro_id"
-    #t.integer  "con_id"
     t.integer  "category_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -29,8 +27,16 @@ ActiveRecord::Schema.define(version: 20150206103538) do
 
   add_index "apps", ["category_id"], name: "index_apps_on_category_id"
   add_index "apps", ["name"], name: "index_apps_on_name", unique: true
-#  add_index "apps", ["pro_id"], name: "index_apps_on_pro_id"
-#  add_index "apps", ["con_id"], name: "index_apps_on_con_id"
+
+  create_table "apps_cons", id: false, force: :cascade do |t|
+    t.integer "app_id"
+    t.integer "con_id"
+  end
+
+  create_table "apps_pros", id: false, force: :cascade do |t|
+    t.integer "app_id"
+    t.integer "pro_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -78,7 +84,7 @@ ActiveRecord::Schema.define(version: 20150206103538) do
     t.datetime "updated_at", null: false
   end
 
-   add_index "pros", ["app_id"], name: "index_pros_on_app_id"
+  add_index "pros", ["app_id"], name: "index_pros_on_app_id"
 
   create_table "stores", force: :cascade do |t|
     t.string   "baseRouterUrl"
@@ -95,14 +101,22 @@ ActiveRecord::Schema.define(version: 20150206103538) do
 
   add_index "top10s", ["app_id"], name: "index_top10s_on_app_id"
 
- #create_table :apps_pros, id: false do |t|
-#   t.belongs_to :app
-  #  t.belongs_to :pro
-  #end
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
-  #create_table :apps_cons, id: false do|t|
-   # t.belongs_to :app 
-    #t.belongs_to :con
- # end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
