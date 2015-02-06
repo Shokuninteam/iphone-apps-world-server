@@ -1,8 +1,7 @@
 class ArticlesController < ApplicationController
  
- 	def page
+ 	def paginateMainPage
 		@num = calcOffset(params[:page].to_i)
-		puts(@num)
 		@articles = App.where(released: true).limit(10).offset(@num).order("updated_at DESC")
 		render json: @articles
 	end
@@ -16,9 +15,35 @@ class ArticlesController < ApplicationController
 		render json: @article
 	end
 
-	def getArticlesByCat
+	def showArticlesByCat
 		@articlesByCat = App.joins(:category).where(released: true).where({categories: {name: params[:name]}}).limit(10)
-		render json: @articlesByCat
+		@count = @articlesByCat.count()
+		render json: {
+			articles: @articlesByCat,
+			total: @count
+		}
+
+	end
+
+	def showPaginateArticlesByCat
+		@num = calcOffset(params[:page].to_i)
+		@articlesByCat = App.joins(:category).where(released: true).where({categories: {name: params[:name]}}).limit(10).offset(@num)
+	end
+
+
+	def searchArticles
+		@articlesBySearch = App.where("name like ?", "%#{params[:name]}%").where(released: true).limit(10).order("updated_at DESC")
+		@count = @articlesBySearch.count()
+		render json: {
+			articles: @articlesBySearch,
+			total: @count
+		}
+
+	end
+
+	def searchPaginateArticles
+		@num = calcOffset(params[:page].to_i)
+		@articlesBySearch = App.where("name like ?", params[:name]).where(released: true).limit(10).order("updated_at DESC").offset(@num)
 	end
 
 end

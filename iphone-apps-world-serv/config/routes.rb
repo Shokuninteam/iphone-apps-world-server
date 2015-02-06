@@ -27,12 +27,15 @@ Rails.application.routes.draw do
 #done
 get 'global' => 'globals#index'
 #done
-get 'articles/set/:page' => 'articles#page', :page => /\d+/
-
-get 'articles/search' => 'apps#search'
-
+get 'articles/set/:page' => 'articles#paginateMainPage', :page => /\d+/
 #done
-get 'categories/:name/articles' => 'articles#getArticlesByCat'
+get 'articles/search/:name' => 'articles#searchArticles'
+#done
+get 'articles/search/:name/set/:page' => 'articles#searchPaginateArticles'
+#done
+get 'categories/:name/articles' => 'articles#showArticlesByCat'
+#done
+get 'categories/:name/articles/set/:page' => 'articles#showPaginateArticlesByCat'
 #done
 get 'articles/:name' => 'articles#show'
   
