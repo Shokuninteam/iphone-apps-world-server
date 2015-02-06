@@ -11,25 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205022058) do
+ActiveRecord::Schema.define(version: 20150206103538) do
 
   create_table "apps", force: :cascade do |t|
-    t.string   "name", null: false
+    t.string   "name",                        null: false
     t.decimal  "price"
     t.string   "url"
-    t.text     "description", null: false
+    t.text     "description",                 null: false
     t.text     "analysis"
-    t.text     "pros"
-    t.text     "cons"
+   # t.integer  "pro_id"
+    #t.integer  "con_id"
     t.integer  "category_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.boolean  "released",      default: false
-    
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "released",    default: false
   end
 
   add_index "apps", ["category_id"], name: "index_apps_on_category_id"
   add_index "apps", ["name"], name: "index_apps_on_name", unique: true
+#  add_index "apps", ["pro_id"], name: "index_apps_on_pro_id"
+#  add_index "apps", ["con_id"], name: "index_apps_on_con_id"
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,6 +39,15 @@ ActiveRecord::Schema.define(version: 20150205022058) do
   end
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true
+
+  create_table "cons", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "app_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "cons", ["app_id"], name: "index_cons_on_app_id"
 
   create_table "countries", force: :cascade do |t|
     t.string   "label"
@@ -61,6 +71,15 @@ ActiveRecord::Schema.define(version: 20150205022058) do
 
   add_index "images", ["app_id"], name: "index_images_on_app_id"
 
+  create_table "pros", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "app_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+   add_index "pros", ["app_id"], name: "index_pros_on_app_id"
+
   create_table "stores", force: :cascade do |t|
     t.string   "baseRouterUrl"
     t.datetime "created_at",    null: false
@@ -75,5 +94,15 @@ ActiveRecord::Schema.define(version: 20150205022058) do
   end
 
   add_index "top10s", ["app_id"], name: "index_top10s_on_app_id"
+
+ #create_table :apps_pros, id: false do |t|
+#   t.belongs_to :app
+  #  t.belongs_to :pro
+  #end
+
+  #create_table :apps_cons, id: false do|t|
+   # t.belongs_to :app 
+    #t.belongs_to :con
+ # end
 
 end

@@ -9,6 +9,9 @@
 
 
 ##
+
+
+
 categories = Category.create([{name: "divertissement"}, 
 	{name: "jeux"},{name: "sport"},{name: "info"},
 	{name: "musique"}, {name: "tele"}, {name: "chat"},
@@ -21,8 +24,8 @@ apps = App.create([
  		price: 10,
  		description: "blablabla description tiwtter1",
  		analysis: "blablabla analysis twitter1",
- 		pros: "blabla pros1",
- 		cons: "blabla cons1",
+ 		#pro: Pro.where(id: [1,2]),
+ 		#con: Con.where(id: [1,2]),
  		url: "https://itunes.apple.com/us/app/twitter/id333903271?mt=8",
  		category: categories.first,
  		released: true
@@ -32,14 +35,60 @@ apps = App.create([
 		price: 0,
  		description: "blablabla description youtube",
  		analysis: "blablabla analysis youtube",
- 		pros: "blabla pro youtube",
- 		cons: "blabla con youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
  		released: true,
  		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
  		category: categories.first
  	}
  ])
+pros = Pro.create([
+	{content: "blablabla1pro",
+		app: apps.first},
+	{content: "blablabla2pro",
+		app: apps.first},
+	{content: "blablabla3pro",
+		app: apps.first},
+	{content: "blablabla4pro",
+		app: apps.first},
+	{content: "blablabla5pro",
+		app: apps.second},
+	{content: "blablabla6pro",
+		app: apps.second},
+	{content: "blablabla7pro",
+		app: apps.second},
+	{content: "blablabla8pro",
+		app: apps.second}
+	])
 
+cons = Con.create([
+	{content: "blablabla1con",
+		app: apps.second},
+	{content: "blablabla2con",
+		app: apps.second},
+	{content: "blablabla3con",
+		app: apps.second},
+	{content: "blablabla4con",
+		app: apps.second},
+	{content: "blablabla5con",
+		app: apps.second},
+	{content: "blablabla6con",
+		app: apps.second},
+	{content: "blablabla7con",
+		app: apps.first},
+	{content: "blablabla8con",
+		app: apps.first},
+	{content: "blablabla9con",
+		app: apps.first},
+	{content: "blablabla10con",
+		app: apps.first},
+	{content: "blablabla11con",
+		app: apps.first},
+	{content: "blablabla12con",
+		app: apps.first},
+	{content: "blablabla13con",
+		app: apps.first}
+	])
 Top10.create([
 	{
 		app: apps.first,
