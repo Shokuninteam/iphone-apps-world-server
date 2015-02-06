@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'articles/index'
+
   get 'welcome/index'
 
 
@@ -22,12 +24,17 @@ Rails.application.routes.draw do
     end
   end
 
+#done
 get 'global' => 'globals#index'
-get 'global/set/:page' => "globals#page", :page => /\d+/
-get 'articles' => 'apps#index'
+#done
+get 'articles/set/:page' => 'articles#page', :page => /\d+/
+
 get 'articles/search' => 'apps#search'
-get 'categories/:name/articles' => 'apps#getAppsByCat'
-get 'articles/:name' => 'apps#show'
+
+#done
+get 'categories/:name/articles' => 'articles#getArticlesByCat'
+#done
+get 'articles/:name' => 'articles#show'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
