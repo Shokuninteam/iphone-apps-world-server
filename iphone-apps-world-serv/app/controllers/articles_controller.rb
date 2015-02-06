@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-		@article = App.where(released: true, name:params[:name])
+		@article = App.where(released: true, name:params[:name]).first
 		render json: @article
 	end
 
