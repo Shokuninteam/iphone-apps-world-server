@@ -3,6 +3,10 @@ class AdminsController < ApplicationController
 	before_filter :ensure_admin!
 
 
+	def index
+		
+	end
+
 	private
 	def ensure_admin!
 	 unless current_user.admin?

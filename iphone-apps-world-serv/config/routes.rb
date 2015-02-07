@@ -10,14 +10,10 @@ Rails.application.routes.draw do
 
   resources :categories do
     resources :apps do
-      resources :images do
-      end
-      resources :pros do
-      end
-      resources :cons do
-      end
-      resources :top10s do
-      end
+      resources :images
+      resources :pros
+      resources :cons
+      resources :top10s
     end
   end
 
@@ -25,6 +21,8 @@ Rails.application.routes.draw do
     resources :countries do
     end
   end
+
+get 'admins' => 'admins#index'
 
 #done
 get 'global' => 'globals#index'

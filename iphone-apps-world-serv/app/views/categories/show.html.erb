@@ -1,2 +1,21 @@
 <h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<p>
+	<strong>Name:</strong>
+	<%= @category.name %>
+</p>
+
+<!-- SHOWArticles -->
+<h2>Articles</h2>
+<%= render @category.apps%>
+
+
+
+<!--ADDCOMMENT-->
+
+<h2>add app:</h2>
+<%= render 'apps/form'%>
+
+<!-- links -->
+
+<%= link_to 'back', categories_path%>
+<%= link_to 'edit', edit_category_path(@category)%>

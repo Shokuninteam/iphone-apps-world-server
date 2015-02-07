@@ -22,8 +22,10 @@ class ArticlesController < ApplicationController
 	end
 
 	def showArticlesByCat
-		@articlesByCat = App.joins(:category).where(released: true).where({categories: {name: params[:name]}}).limit(10)
-		@count = @articlesByCat.count()
+		#@articlesByCat = App.joins(:category).where(released: true).where({categories: {name: params[:name]}}).limit(10)
+		@temp = App.joins(:category).where(released: true).where({categories: {name: params[:name]}})
+		@articlesByCat= @temp.limit(10)
+		@count = @temp.count()
 		render json: {
 			articles: @articlesByCat,
 			total: @count

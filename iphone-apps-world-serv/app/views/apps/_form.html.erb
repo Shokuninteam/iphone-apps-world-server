@@ -1,0 +1,20 @@
+<%= form_for([@category, @category.apps.build]) do |f|%>
+	<p>
+		<%= f.label :name%><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :url%><br>
+		<%= f.text_area :url%>
+	</p>
+
+	<p>
+		<%= f.label :price%><br>
+		<%= f.number_field :price%>
+	</p>
+
+	<p>
+		<%= f.submit%>
+	</p>
+	<%end%>
