@@ -36,12 +36,14 @@ class ArticlesController < ApplicationController
 	def showPaginateArticlesByCat
 		@num = calcOffset(params[:page].to_i)
 		@articlesByCat = App.joins(:category).where(released: true).where({categories: {name: params[:name]}}).limit(10).offset(@num)
+		render json: @articlesByCat
 	end
 
 
 	def searchArticles
-		@articlesBySearch = App.where("name like ?", "%#{params[:name]}%").where(released: true).limit(10).order("updated_at DESC")
-		@count = @articlesBySearch.count()
+		@temp = App.where("name like ?", "%#{params[:name]}%").where(released: true).order("updated_at DESC")
+		@articlesBySearch = @temp.limit(10)
+		@count = @temp.count()
 		render json: {
 			articles: @articlesBySearch,
 			total: @count
@@ -52,6 +54,7 @@ class ArticlesController < ApplicationController
 	def searchPaginateArticles
 		@num = calcOffset(params[:page].to_i)
 		@articlesBySearch = App.where("name like ?", params[:name]).where(released: true).limit(10).order("updated_at DESC").offset(@num)
+		render json: @articlesBySearch
 	end
 
 end
