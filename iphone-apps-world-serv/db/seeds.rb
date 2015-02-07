@@ -31,7 +31,7 @@ apps = App.create([
  		released: true
  	},
  	{
- 		name: 'youtube',
+ 		name: 'youtube2',
 		price: 0,
  		description: "blablabla description youtube",
  		analysis: "blablabla analysis youtube",
@@ -40,6 +40,314 @@ apps = App.create([
  		released: true,
  		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
  		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtub3',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtube4',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtube5',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtube6',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtube7',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtube8',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtube9',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtube10',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: 'youtube11',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '1youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '2youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '3youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '4youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '5youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '6youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '7youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '8youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '9youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.first
+ 	},
+ 	{
+ 		name: '10youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: '11youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: '12youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: '13youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: '14youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: '15youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: '16youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: '17youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: '18youtube',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
+ 	},
+ 	{
+ 		name: 'youtube3',
+		price: 0,
+ 		description: "blablabla description youtube",
+ 		analysis: "blablabla analysis youtube",
+ 	#	pros: Pro.where(id: [4,5]),
+ 	#	cons: Con.where(id: [4,5]),
+ 		released: true,
+ 		url: "https://itunes.apple.com/us/app/youtube/id544007664?mt=8",
+ 		category: categories.second
  	}
  ])
 pros = Pro.create([

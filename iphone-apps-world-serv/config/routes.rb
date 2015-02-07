@@ -12,21 +12,12 @@ Rails.application.routes.draw do
     resources :apps do
       resources :images do
       end
-    end
-  end
-
-  resources :top10s do
-    resources :apps do
-    end
-  end
-  
-  resources :pros do
-    resources :apps do
-    end
-  end
-
-  resources :cons do
-    resources :apps do
+      resources :pros do
+      end
+      resources :cons do
+      end
+      resources :top10s do
+      end
     end
   end
 
