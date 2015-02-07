@@ -34,3 +34,4 @@ class AppsController < AdminsController
   def app_params
     params.require(:app).permit(:url, :name, :price, :description)
   end
+end
