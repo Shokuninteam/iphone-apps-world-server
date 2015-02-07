@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
 
 	def searchPaginateArticles
 		@num = calcOffset(params[:page].to_i)
-		@articlesBySearch = App.where("name like ?", params[:name]).where(released: true).limit(10).order("updated_at DESC").offset(@num)
+		@articlesBySearch = App.where("name like ?", "%#{params[:name]}%").where(released: true).order("updated_at DESC").offset(@num).limit(10)
 		render json: @articlesBySearch
 	end
 
