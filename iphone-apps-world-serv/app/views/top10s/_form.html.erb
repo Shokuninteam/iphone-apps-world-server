@@ -1,0 +1,10 @@
+<%= form_for([@category, @category.app.top10s.build]) do |f|%>
+	<p>
+		<%= f.label :rank%><br>
+		<%= f.number_fiels :rank %>
+	</p>
+
+	<p>
+		<%= f.submit%>
+	</p>
+	<%end%>

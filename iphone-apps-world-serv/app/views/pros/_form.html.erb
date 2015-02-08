@@ -1,0 +1,10 @@
+<%= form_for([@app, @app.pros.build]) do |f|%>
+	<p>
+		<%= f.label :pros%><br>
+		<%= f.text_area :pros %>
+	</p>
+
+	<p>
+		<%= f.submit%>
+	</p>
+	<%end%>

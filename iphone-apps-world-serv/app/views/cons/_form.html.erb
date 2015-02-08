@@ -1,0 +1,10 @@
+<%= form_for([@app, @app.cons.build]) do |f|%>
+	<p>
+		<%= f.label :cons%><br>
+		<%= f.text_area :cons %>
+	</p>
+
+	<p>
+		<%= f.submit%>
+	</p>
+	<%end%>

@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     end
   end
 
+
+
+
   resources :stores do
     resources :countries do
     end

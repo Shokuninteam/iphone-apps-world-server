@@ -16,8 +16,10 @@ class AppsController < AdminsController
     redirect_to category_path(@cat)
   end
 
- # def edit
-  #end
+  def edit
+
+  end
+
 
   def update
     @cat = Category.find(params[:category_id])
