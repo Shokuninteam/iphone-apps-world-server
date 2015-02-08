@@ -1,12 +1,12 @@
 class AppsController < AdminsController
 
- # def new
-  #end
+ def new
+  end
 
   def create
     @cat = Category.find(params[:category_id])
     @app = @cat.apps.create(app_params)
-    redirect_to @cat
+    redirect_to @app
   end
 
   def destroy
@@ -26,11 +26,12 @@ class AppsController < AdminsController
     @app = @cat.apps.update(app_params)
   end
 
-  #def show
-  #end
+  def show
+    @app = App.find(params[:id])
+  end
 
- # def index
- # end
+ def index
+ end
   
   private 
   def app_params

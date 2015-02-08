@@ -1,2 +1,65 @@
 <h1>Apps#show</h1>
-<p>Find me in app/views/apps/show.html.erb</p>
+<p>
+	<strong>Name:</strong>
+	<%= @app.name %>
+</p>
+<p>
+	<strong>url:</strong>
+	<%= @app.url %>
+</p>
+<p>
+	<strong>price:</strong>
+	<%= @app.price %>
+</p>
+<p>
+	<strong>description:</strong>
+	<%= @app.description %>
+</p>
+<p>
+	<strong>analysis:</strong>
+	<%= @app.analysis %>
+</p>
+
+
+<!-- SHOWPros -->
+<h2>Pros</h2>
+<table>
+	<tr>
+		<th>description</th>
+		<th colspan="2"></th>
+	</tr>
+<%= render @app.pros%>
+</table>
+
+<!-- SHOW Cons-->
+<h2>Cons</h2>
+<table>
+	<tr>
+		<th>description</th>
+		<th colspan="3"></th>
+	</tr>
+<%= render @app.cons%>
+</table
+
+<!-- SHOW top10-->
+<h2>Rank</h2>
+<table>
+	<tr>
+		<th>rank</th>
+		<th colspan="3"></th>
+	</tr>
+<%= render @app.top10s%>
+</table
+
+
+
+<!--ADDArticles-->
+
+<h2>add pro:</h2>
+
+
+
+<!-- links -->
+
+<%= link_to 'back', categories_path%>
+<%= link_to 'edit', edit_app_path(@app)%>

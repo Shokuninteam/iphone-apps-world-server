@@ -1,0 +1,5 @@
+<tr>
+		<td><%= pro.content%></td>
+		<td><%= link_to 'edit', [pro.app, pro]%></td>
+		<td><%= link_to 'destroy', [pro.app, pro], method: :delete, data: { confirm:"sure?"}%></td>
+	</tr>

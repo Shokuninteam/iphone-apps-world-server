@@ -1,8 +1,12 @@
 class ProsController < AdminsController
 	def create
-    	@cat = Category.find(params[:category_id])
-    	@app = @cat.apps.find(params[:id])
-    	@pro = @cat.pros.create(pro_params)
-    	redirect_to @cat
+    	@app = App.find(params[:id])
+    	@pro = @app.pros.create(pro_params)
+    	redirect_to @app
+  	end
+  	def new
+  	end
+
+  	def index 
   	end
 end

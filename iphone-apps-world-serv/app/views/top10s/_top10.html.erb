@@ -1,0 +1,5 @@
+<tr>
+		<td><%= top10.rank%></td>
+		<td><%= link_to 'edit', [top10.app, top10]%></td>
+		<td><%= link_to 'destroy', [top10.app, top10], method: :delete, data: { confirm:"sure?"}%></td>
+	</tr>

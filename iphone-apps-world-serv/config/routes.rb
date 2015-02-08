@@ -9,16 +9,16 @@ Rails.application.routes.draw do
   root to: 'globals#index'
 
   resources :categories do
+    resources :apps 
+  end
+
+
     resources :apps do
       resources :images
       resources :pros
       resources :cons
       resources :top10s
     end
-  end
-
-
-
 
   resources :stores do
     resources :countries do
