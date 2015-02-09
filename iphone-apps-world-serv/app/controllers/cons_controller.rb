@@ -4,4 +4,9 @@ def create
     @con = @app.cons.create(con_params)
     redirect_to @app
   end
+
+  def show 
+  	@con = Con.find(params[:id])
+  end
+
 end

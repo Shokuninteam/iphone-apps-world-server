@@ -1,7 +1,7 @@
 
 <tr>
 		<td><%= app.name%></td>
-		<td><%= link_to 'show', [app.category, app]%></td>
-		<td><%= link_to 'edit', [app.category, app]%></td>
-		<td><%= link_to 'destroy', [app.category, app], method: :delete, data: { confirm:"sure?"}%></td>
+		<td><%= link_to 'show', [app]%></td>
+		<td><%= link_to 'edit', edit_app_path(app)%></td>
+		<td><%= link_to 'destroy', [app], method: :delete, data: { confirm:"sure?"}%></td>
 	</tr>

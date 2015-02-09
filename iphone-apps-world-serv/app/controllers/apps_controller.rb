@@ -4,26 +4,28 @@ class AppsController < AdminsController
   end
 
   def create
-    @cat = Category.find(params[:category_id])
-    @app = @cat.apps.create(app_params)
+    @category = Category.find(params[:category_id])
+    @app = @category.apps.create(app_params)
     redirect_to @app
   end
 
   def destroy
-    @cat = Category.find(params[:category_id])
-    @app = @cat.apps.find(params[:id])
+    @category = Category.find(params[:category_id])
+    @app = @category.apps.find(params[:id])
     @app.destroy
-    redirect_to category_path(@cat)
+    redirect_to category_path(@category)
   end
 
   def edit
+    #@category = Category.find(params[:category_id])
+    @app = App.find(params[:id])
 
   end
 
 
   def update
-    @cat = Category.find(params[:category_id])
-    @app = @cat.apps.update(app_params)
+    @category = Category.find(params[:category_id])
+    @app = @category.apps.update(app_params)
   end
 
   def show

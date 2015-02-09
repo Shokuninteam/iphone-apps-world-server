@@ -8,17 +8,17 @@ Rails.application.routes.draw do
 
   root to: 'globals#index'
 
-  resources :categories do
-    resources :apps 
+  resources :categories, shallow: true do
+      resources :apps do
+          resources :images
+          resources :pros
+          resources :cons
+          resources :top10s
+      end
   end
 
 
-    resources :apps do
-      resources :images
-      resources :pros
-      resources :cons
-      resources :top10s
-    end
+ 
 
   resources :stores do
     resources :countries do
