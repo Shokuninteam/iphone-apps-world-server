@@ -6,20 +6,19 @@ class ProsController < AdminsController
 
   	def create
 		
-    	@app = App.find(params[:id])
+    	@app = App.find(params[:app_id])
     	@pro = @app.pros.create(pro_params)
-    	redirect_to app_path(@app)
+    	redirect_to edit_app_path(@app)
   	end
 
   	def index 
   	end
 
   	def destroy
-  		@app = App.find(params[:app_id])
   		@pro = Pro.find(params[:id])
   		@pro.destroy
 
-  		redirect_to app_path(@app)
+  		redirect_to app_path(@pro.app_id)
   	end
 
   	def edit
@@ -38,7 +37,7 @@ class ProsController < AdminsController
   	def show
   		#@category = Category.find(params[:category_id])
     	@app = App.find(params[:id])
-    	@pro = @app.pros.build
+    	#@pro = @app.pros.build
   	end
 
   	  private

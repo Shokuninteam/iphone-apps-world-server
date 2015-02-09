@@ -25,8 +25,13 @@ class AppsController < AdminsController
 
 
   def update
-    @category = Category.find(params[:category_id])
-    @app = @category.apps.update(app_params)
+    #@category = Category.find(params[:category_id])
+    @app = App.find(params[:id])
+    if @app.update(app_params)
+      redirect_to app_path(@app)
+    else
+      render 'edit'
+    end
   end
 
   def show
