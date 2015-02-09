@@ -1,6 +1,8 @@
 class AppsController < AdminsController
 
   def new
+      @category = Category.find(params[:category_id])
+      @app = @category.apps.new
   end
 
   def create
@@ -17,7 +19,7 @@ class AppsController < AdminsController
   end
 
   def edit
-    #@category = Category.find(params[:category_id])
+    
     @app = App.find(params[:id])
 
   end

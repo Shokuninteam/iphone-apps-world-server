@@ -1,6 +1,7 @@
 class ProsController < AdminsController
 	def new
-		@pro = Pro.new
+		@app = App.find(params[:app_id])
+		@pro = @app.pros.new  
   	end
 
   	def create
