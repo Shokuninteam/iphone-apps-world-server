@@ -22,9 +22,18 @@
 		<%= f.label :analysis%><br>
 		<%= f.text_area :analysis%>
 	</p>
-	
+	<h2>listed pros</h2>
+	<table>
+		<tr>
+			<th>description</th>
+			<th colspan="2"></th>
+		</tr>
+		<%= render @app.pros%>
+	</table>
+
+	<h2>New pro</h2>
 		<%= render 'pros/form' %>
-		
+
 	<p>
 		<%= f.submit%>
 	</p>

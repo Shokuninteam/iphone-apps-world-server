@@ -12,10 +12,9 @@ class AppsController < AdminsController
   end
 
   def destroy
-    @category = Category.find(params[:category_id])
-    @app = @category.apps.find(params[:id])
+    @app = App.find(params[:id])
     @app.destroy
-    redirect_to category_path(@category)
+    redirect_to categories_path
   end
 
   def edit
