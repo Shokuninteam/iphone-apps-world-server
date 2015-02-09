@@ -1,12 +1,12 @@
 class AppsController < AdminsController
 
- def new
+  def new
   end
 
   def create
     @category = Category.find(params[:category_id])
     @app = @category.apps.create(app_params)
-    redirect_to @app
+    redirect_to category_path(@category)
   end
 
   def destroy

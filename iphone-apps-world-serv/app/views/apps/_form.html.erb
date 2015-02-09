@@ -1,4 +1,4 @@
-<%= form_for([@category, @category.apps.build]) do |f|%>
+<%= form_for ([@category, @category.apps.build]) do |f|%>
 	<p>
 		<%= f.label :name%><br>
 		<%= f.text_field :name %>
@@ -6,20 +6,22 @@
 
 	<p>
 		<%= f.label :url%><br>
-		<%= f.text_area :url%>
+		<%= f.text_field :url%>
 	</p>
 
 	<p>
 		<%= f.label :price%><br>
 		<%= f.number_field :price%>
 	</p>
+	<p>
+		<%= f.label :Description%><br>
+		<%= f.text_area :description%>
+	</p>
 
-<h2>add pros:</h2>
-<%= render 'pros/form'%>
-<h2>add cons:</h2>
-<%= render 'cons/form'%>
-<h2>add cons:</h2>
-<%= render 'top10s/form'%>
+	<p>
+		<%= f.label :analysis%><br>
+		<%= f.text_area :analysis%>
+	</p>
 
 	<p>
 		<%= f.submit%>
