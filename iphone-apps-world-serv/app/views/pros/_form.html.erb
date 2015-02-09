@@ -1,12 +1,12 @@
 <%= form_for [@app, @pro] do |f|%>
 
-	<% if @category.errors.any? %>
+	<% if @pro.errors.any? %>
 	<div id="error_explanation">
 		<h2>
-			<%= pluralize(@category.errors.count, "error")%> prohibited this app for being saved:
+			<%= pluralize(@pro.errors.count, "error")%> prohibited this pro for being saved:
 		</h2>
 		<ul>
-			<% @category.errors.full_messages.each do |msg| %>
+			<% @pro.errors.full_messages.each do |msg| %>
 			<li><%= msg%></li>
 			<% end %>
 		</ul>
