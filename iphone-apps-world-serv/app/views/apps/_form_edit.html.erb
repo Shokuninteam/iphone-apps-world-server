@@ -42,6 +42,21 @@
 		<%= render @app.cons%>
 	</table>
 
+	<!-- SHOW top10-->
+	<h2>top 10</h2>
+<% if @app.top10s.any? %>
+	<h2>Rank</h2>
+	<table>
+		<tr>
+			<th>rank</th>
+			<th colspan="3"></th>
+		</tr>
+	<%= render @app.top10s %>
+	</table
+<% else %>
+	<p>New top 10: <%= link_to 'new', new_app_top10_path(@app)%></p>
+<% end %>
+
 
 	
 

@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
 get 'admins' => 'admins#index'
 
+get 'top10s' => 'top10s#index'
 #done
 get 'global' => 'globals#index'
 #done

@@ -13,6 +13,7 @@ class Top10sController < ApplicationController
   	end
 
   	def index 
+  		@top10s = App.joins(:top10s).select(:name, :rank).where(released: true).order("rank")
   	end
 
   	def destroy
