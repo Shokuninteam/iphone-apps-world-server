@@ -57,7 +57,12 @@
 	<p>New top 10: <%= link_to 'new', new_app_top10_path(@app)%></p>
 <% end %>
 
+<!-- show images -->
+<h2>Images</h2>
+<%= render @app.images %>
 
+<h2>Add new image</h2>
+<%= render 'images/form' %>
 <!--ADDArticles-->
 
 <h2>add pro:</h2>

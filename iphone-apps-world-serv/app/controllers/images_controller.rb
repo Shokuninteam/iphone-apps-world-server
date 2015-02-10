@@ -6,7 +6,7 @@ class ImagesController < AdminsController
   end
 
   def create
-    @app = app.find(params[:app_id])
+    @app = App.find(params[:app_id])
     @image = @app.images.create(image_params)
     redirect_to app_path(@app)
   end
@@ -16,10 +16,9 @@ class ImagesController < AdminsController
   end
 
   def destroy
-    @app = App.find(params[:app_id])
-    @image = @app.images.find(params[:id])
+    @image = Image.find(params[:id])
     @image.destroy
-    redirect_to app_path(@app)
+    redirect_to app_path(@image.app_id)
   end
 
   def update
@@ -34,7 +33,7 @@ class ImagesController < AdminsController
 
 #json utile pour le client
   def show
-    @app = App.find(params[:app_id])
+    @app = App.find(params[:id])
     #@image = @app.images.find(params[:id])
    # render json: @image
   end

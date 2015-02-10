@@ -1,9 +1,9 @@
 <p>
   <strong>Url</strong>
   <%= image.name %>
-  <%= image_tag image.image.name %>
+  <%= image_tag image.image.url %>
 </p>
  
  <p>
- 	<%= link_to "destroy url", [image.app, image], method: :delete, data:{ confirm: "will destroy url"} %>
+ 	<%= link_to "destroy url", [image], method: :delete, data:{ confirm: "will destroy url"} %>
  </p>
