@@ -1,31 +1,48 @@
-<h1>Categories#show</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @category.name %>
-</p>
+<div class="row">
+	<div class="large-9 large-offset-3 columns">
+		<h1>Articles for <%= @category.name.capitalize %></h1>
+	</div>
+</div>
 
+<div class="row">
+	<div class="large-3 columns">
+		<div class="button secondary">
+			<%= link_to 'Back to category listing', categories_path%>
+		</div>
+	</div>
+	<div class="large-3 columns">
+		<div class="button secondary">
+			<%= link_to 'Edit category', edit_category_path(@category)%>
+		</div>
+	</div>
+</div>
 <!-- SHOWArticles -->
-<h2>Articles</h2>
-<table>
-	<tr>
-		<th>name</th>
-		<th colspan="3"></th>
-	</tr>
+<div class="row">
+	<div class="large-5 large-offset-4 columns">
+		<h2>Application Listing</h2>
+		<table>
+			<tr>
+				<th>name</th>
+				<th colspan="3"></th>
+			</tr>
+			<%= render @category.apps%>
+		</table>
+	</div>
+	<div class="large-3 columns">
+		<div class="button secondary">
+			<%= link_to 'New application', new_category_app_path(@category)%>
+		</div>
+	</div>
+</div>
 
-
-<%= render @category.apps%>
-
-</table>
 
 
 <!--ADDArticles-->
 
-<h2>add app:</h2>
-<%= link_to 'new', new_category_app_path(@category)%>
+
 <!-- %= render 'apps/form'%> -->
 
 
 <!-- links -->
 
-<%= link_to 'back', categories_path%>
-<%= link_to 'edit', edit_category_path(@category)%>
+
