@@ -36,10 +36,15 @@ class AppsController < AdminsController
 
   def show
     @app = App.find(params[:id])
+
+    #@top10 = @app.top10s.find(params[:app_id])
   end
 
- def index
- end
+  def getTop10
+    @app = App.find(params[:id])
+  end
+  helper_method :getTop10
+
   
   private 
   def app_params
