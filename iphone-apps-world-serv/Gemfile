@@ -28,7 +28,8 @@ gem "paperclip", "~> 4.2"
 gem 'will_paginate', '~> 3.0.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# use foundation as css framework
+gem 'foundation-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
