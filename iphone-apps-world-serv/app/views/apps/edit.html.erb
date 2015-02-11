@@ -1,5 +1,13 @@
-<h1>Apps#edit</h1>
-<p>Find me in app/views/apps/edit.html.erb</p>
+<div class="row">
+	<div class="large-1 columns">
+		<div class="button secondary">
+			<%= link_to 'back', app_path %>
+		</div>
+	</div>
+	<div class="large-10 columns">
+		<h1>Editing application <%= @app.name.capitalize %></h1>
+	</div>
+</div>
+	
 <%= render 'form_edit'%>
 
-<%= link_to 'back', app_path %>

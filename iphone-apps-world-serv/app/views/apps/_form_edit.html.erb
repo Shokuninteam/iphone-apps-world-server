@@ -1,71 +1,73 @@
 <%= form_for @app do |f|%>
-	<p>
-		<%= f.label :name%><br>
-		<%= f.text_field :name %>
-	</p>
+	<div class="row">
+		<div class="large-5 columns">
+			<%= f.label :name%>
+			<%= f.text_field :name %>
 
-	<p>
-		<%= f.label :url%><br>
-		<%= f.text_field :url%>
-	</p>
+			<%= f.label :url%>
+			<%= f.text_field :url%>
 
-	<p>
-		<%= f.label :price%><br>
-		<%= f.number_field :price%>
-	</p>
-	<p>
-		<%= f.label :Description%><br>
-		<%= f.text_area :description%>
-	</p>
+			<%= f.label :price%>
+			<%= f.number_field :price%>
 
-	<p>
-		<%= f.label :analysis%><br>
-		<%= f.text_area :analysis%>
-	</p>
-	<h2>listed pros</h2>
-	<p>New pro: <%= link_to 'new', new_app_pro_path(@app)%></p>	
-	<table>
-		<tr>
-			<th>description</th>
-			<th colspan="2"></th>
-		</tr>
-		<%= render @app.pros%>
-	</table>
+			<%= f.label :Description%>
+			<%= f.text_area :description%>
 
-	<h2>listed cons</h2>
-	<p>New con: <%= link_to 'new', new_app_con_path(@app)%></p>	
-	<table>
-		<tr>
-			<th>description</th>
-			<th colspan="2"></th>
-		</tr>
-		<%= render @app.cons%>
-	</table>
+			<%= f.label :analysis%>
+			<%= f.text_area :analysis%>
 
-	<!-- SHOW top10-->
-	<h2>top 10</h2>
-<% if @app.top10s.any? %>
-	<h2>Rank</h2>
-	<table>
-		<tr>
-			<th>rank</th>
-			<th colspan="3"></th>
-		</tr>
-	<%= render @app.top10s %>
-	</table
-<% else %>
-	<p>New top 10: <%= link_to 'new', new_app_top10_path(@app)%></p>
-<% end %>
-<!-- show image-->
-<h2>Images</h2>
-<%= render @app.images %>
-
-<h2>Add new image</h2>
-<%= render 'images/form' %>
-
+			<%= f.submit%>
+		</div>
 	
+		<div class="large-5 columns">
+			<h2>Listed pros</h2>
+			<div class="button secondary">
+				<%= link_to 'New pro', new_app_pro_path(@app)%>
+			</div>
+			<table>
+				<tr>
+					<th>description</th>
+					<th colspan="2"></th>
+				</tr>
+				<%= render @app.pros%>
+			</table>
 
-	<p>
-		<%= f.submit%>
-	</p>
-	<%end%>
+			<h2>Listed cons</h2>
+			<div class="button secondary">
+				<%= link_to 'New con', new_app_con_path(@app)%>
+			</div>
+			<table>
+				<tr>
+					<th>description</th>
+					<th colspan="2"></th>
+				</tr>
+				<%= render @app.cons%>
+			</table>
+
+			<!-- SHOW top10-->
+			<h2>Top 10</h2>
+			<% if @app.top10s.any? %>
+				<h2>Rank</h2>
+				<table>
+					<tr>
+						<th>rank</th>
+						<th colspan="2"></th>
+					</tr>
+					<%= render @app.top10s %>
+				</table>
+			<% else %>
+				<div class="button secondary">
+					<%= link_to 'New in Top 10', new_app_top10_path(@app)%>
+				</div>
+			<% end %>
+			
+			<!-- show image-->
+			<h2>Images</h2>
+			<%= render @app.images %>
+
+			<h6>Add new image</h6>
+			<%= render 'images/form' %>
+		</div>
+	</div>
+
+<%end%>

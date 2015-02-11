@@ -1,74 +1,86 @@
-<h1>Apps#show</h1>
-<%= link_to 'edit', edit_app_path(@app)%>
-<p>
-	<strong>Name:</strong>
-	<%= @app.name %>
-</p>
-<p>
-	<strong>url:</strong>
-	<%= @app.url %>
-</p>
-<p>
-	<strong>price:</strong>
-	<%= @app.price %>
-</p>
-<p>
-	<strong>description:</strong>
-	<%= @app.description %>
-</p>
-<p>
-	<strong>analysis:</strong>
-	<%= @app.analysis %>
-</p>
+<div class="row">
+	<div class="large-9 large-offset-3 columns">
+		<h1>Application <%= @app.name.capitalize %></h1>
+	</div>
+</div>
+<div class="row">
+	<div class="large-3 columns">
+		<div class="button secondary">
+			<%= link_to 'back', category_path(@app.category_id)%>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-6 columns">
+		<strong>Name:</strong>
+		<%= @app.name %><br>
+
+		<strong>url:</strong>
+		<%= @app.url %><br>
+
+		<strong>price:</strong>
+		<%= @app.price %><br>
+
+		<strong>description:</strong>
+		<%= @app.description %><br>
+
+		<strong>analysis:</strong>
+		<%= @app.analysis %><br>
+
+		<div class="button secondary">
+			<%= link_to 'edit', edit_app_path(@app)%>
+		</div>
+	</div>
 
 
-<!-- SHOWPros -->
-<h2>Pros</h2>
-<table>
-	<tr>
-		<th>description</th>
-		<th colspan="2"></th>
-	</tr>
-<%= render @app.pros%>
-</table>
+	<div class="large-6 columns">
+		<!-- SHOWPros -->
+		<h2>Listed pros</h2>
+		<table>
+			<tr>
+				<th>description</th>
+				<th colspan="2"></th>
+			</tr>
+		<%= render @app.pros%>
+		</table>
 
-<!-- SHOW Cons-->
-<h2>Cons</h2>
-<table>
-	<tr>
-		<th>description</th>
-		<th colspan="3"></th>
-	</tr>
-<%= render @app.cons%>
-</table
+		<!-- SHOW Cons-->
+		<h2>Listed cons</h2>
+		<table>
+			<tr>
+				<th>description</th>
+				<th colspan="2"></th>
+			</tr>
+		<%= render @app.cons%>
+		</table
 
-<!-- SHOW top10-->
-<h2>Top10</h2>
-<% if @app.top10s.any? %>
-	<h2>Rank</h2>
-	<table>
-		<tr>
-			<th>rank</th>
-			<th colspan="3"></th>
-		</tr>
-	<%= render @app.top10s %>
-	</table
-<% else %>
-	<p>New top 10: <%= link_to 'new', new_app_top10_path(@app)%></p>
-<% end %>
+		<!-- SHOW top10-->
+		<h2>Top 10</h2>
+		<% if @app.top10s.any? %>
+			<h2>Rank</h2>
+			<table>
+				<tr>
+					<th>rank</th>
+					<th colspan="2"></th>
+				</tr>
+				<%= render @app.top10s %>
+			</table>
+		<% else %>
+			<div class="button secondary">
+				<%= link_to 'New in Top 10', new_app_top10_path(@app)%>
+			</div>
+		<% end %>
 
-<!-- show images -->
-<h2>Images</h2>
-<%= render @app.images %>
+		<!-- show images -->
+		<h2>Images</h2>
+		<%= render @app.images %>
 
-<h2>Add new image</h2>
-<%= render 'images/form' %>
-<!--ADDArticles-->
-
-<h2>add pro:</h2>
-
+		<h6>Add new image</h6>
+		<%= render 'images/form' %>
+	</div>
+</div>
 
 
-<!-- links -->
 
-<%= link_to 'back', category_path(@app.category_id)%>
+
