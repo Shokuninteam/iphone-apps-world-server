@@ -1,19 +1,19 @@
 <%= form_for ([@category, @category.apps.build]) do |f|%>
 	<div class="row">
 		<div class="large-5 large-offset-2 columns">
-			<%= f.label :name%><br>
+			<%= f.label :name%>
 			<%= f.text_field :name %>
 		
-			<%= f.label :url%><br>
+			<%= f.label :url%>
 			<%= f.text_field :url%>
 		
-			<%= f.label :price%><br>
+			<%= f.label :price%>
 			<%= f.number_field :price%>
 		
-			<%= f.label :Description%><br>
+			<%= f.label :Description%>
 			<%= f.text_area :description%>
 		
-			<%= f.label :analysis%><br>
+			<%= f.label :analysis%>
 			<%= f.text_area :analysis%>
 
 			<%= f.submit%>
