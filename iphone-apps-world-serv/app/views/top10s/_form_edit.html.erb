@@ -13,13 +13,14 @@
 	</div>
 	<% end %>
 
-
-	<p>
-		<%= f.label :rank%><br>
-		<%= f.number_field :rank %>
-	</p>
-
-	<p>
-		<%= f.submit%>
-	</p>
-	<%end%>
+	<div class="row">
+		<div class="large-5 large-offset-2 columns">
+			<%= f.label :rank%>
+			<%= f.number_field :rank %>
+	
+		 	<div class="button secondary">
+				<%= f.submit%>
+			</div>
+		</div>
+	</div>		
+<%end%>

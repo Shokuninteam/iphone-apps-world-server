@@ -1,4 +1,12 @@
-<p>Find me in app/view/top10s/edit.html.erb</p>
-<%= render 'form_edit'%>
+<div class="row">
+	<div class="large-1 columns">
+		<div class="button secondary">
+			<%= link_to 'back', app_path(@top10.app_id) %>
+		</div>
+	</div>
+	<div class="large-10 columns">
+		<h1>Editing top10 for application</h1>
+	</div>
+</div>
 
-<%= link_to 'back', app_path %>
+<%= render 'form_edit'%>

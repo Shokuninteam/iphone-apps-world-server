@@ -1,25 +1,26 @@
 <%= form_for([@app, @app.top10s.build]) do |f|%>
 
-<% if @app.errors.any? %>
-	<div id="error_explanation">
-		<h2>
-			<%= pluralize(@app.errors.count, "error")%> prohibited this app for being saved:
-		</h2>
-		<ul>
-			<% @app.errors.full_messages.each do |msg| %>
-			<li><%= msg%></li>
-			<% end %>
-		</ul>
-	</div>
+	<% if @app.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@app.errors.count, "error")%> prohibited this app for being saved:
+			</h2>
+			<ul>
+				<% @app.errors.full_messages.each do |msg| %>
+					<li><%= msg%></li>
+				<% end %>
+			</ul>
+		</div>
 	<% end %>
 
+	<div class="row">
+		<div class="large-5 large-offset-2 columns">
+			<%= f.label :rank%>
+			<%= f.number_field :rank %>
 
-	<p>
-		<%= f.label :rank%><br>
-		<%= f.number_field :rank %>
-	</p>
-
-	<p>
-		<%= f.submit%>
-	</p>
-	<%end%>
+			<div class="button secondary">
+				<%= f.submit%>
+			</div>
+		</div>
+	</div>
+<%end%>
