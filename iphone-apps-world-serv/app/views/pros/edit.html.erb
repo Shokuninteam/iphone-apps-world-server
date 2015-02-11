@@ -1,4 +1,12 @@
-<p>Find me in app/views/pros/edit.html.erb</p>
-<%= render 'form_edit'%>
+<div class="row">
+	<div class="large-1 columns">
+		<div class="button secondary">
+			<%= link_to 'back', app_path(@pro.app_id) %>
+		</div>
+	</div>
+	<div class="large-10 columns">
+		<h1>Editing pro for application</h1>
+	</div>
+</div>
 
-<%= link_to 'back', app_path %>
+<%= render 'form_edit'%>
