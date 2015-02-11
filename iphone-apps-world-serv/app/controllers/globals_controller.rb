@@ -5,13 +5,13 @@ class GlobalsController < ApplicationController
     	@articles = App.joins(:images).where(released: true).limit(10).order("apps.updated_at DESC")
     	@categories = Category.all
     	@count = App.count(released: true)
-    	@image = Image.where(app_id: @articles)
+    	@images = Image.where(app_id: @articles)
 		#@count = @articles.count()
 		render :json => {
 			top10: @top10,
   			articles: @articles,
   			categories: @categories,
-  			images: @image.as_json,
+  			images: @images,
   			total: @count
 			 }
 	end
