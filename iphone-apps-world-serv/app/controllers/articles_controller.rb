@@ -14,10 +14,12 @@ class ArticlesController < ApplicationController
 		@article = App.where(released: true, name:params[:name]).first
 		@pros = Pro.where(app_id: @article)
     	@cons = Con.where(app_id: @article)
+    	@image = Image.where(app_id: @article)
     	render json: {
     		article: @article,
     		pros: @pros,
-    		cons: @cons
+    		cons: @cons,
+    		image: @image
     	}
 	end
 

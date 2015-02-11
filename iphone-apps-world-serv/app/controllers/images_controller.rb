@@ -34,8 +34,8 @@ class ImagesController < AdminsController
 #json utile pour le client
   def show
     @app = App.find(params[:id])
-    #@image = @app.images.find(params[:id])
-   # render json: @image
+    @image = @app.images.find(params[:id])
+    render json: @image
   end
 
   private
