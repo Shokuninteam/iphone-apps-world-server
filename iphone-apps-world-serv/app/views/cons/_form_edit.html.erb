@@ -1,27 +1,27 @@
 <%= form_for @con do |f|%>
 
-<% if @con.errors.any? %>
-	<div id="error_explanation">
-		<h2>
-			<%= pluralize(@con.errors.count, "error")%> prohibited this con for being saved:
-		</h2>
-		<ul>
-			<% @con.errors.full_messages.each do |msg| %>
-			<li><%= msg%></li>
-			<% end %>
-		</ul>
-	</div>
+	<% if @con.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@con.errors.count, "error")%> prohibited this con for being saved:
+			</h2>
+			<ul>
+				<% @con.errors.full_messages.each do |msg| %>
+				<li><%= msg%></li>
+				<% end %>
+			</ul>
+		</div>
 	<% end %>
 
 
-	<p>
-		<%= f.label :content%><br>
-		<%= f.text_area :content %>
-	</p>
-
-	<p>
-		<div class="button secondary">
+	<div class="row">
+		<div class="large-5 large-offset-2 columns">
+			<%= f.label :content%>
+			<%= f.text_area :content %>
+	
+			<div class="button secondary">
 			<%= f.submit%>
+			</div>
 		</div>
-	</p>
-	<%end%>
+	</div>
+<%end%>
