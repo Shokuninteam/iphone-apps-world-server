@@ -2,7 +2,7 @@ class GlobalsController < ApplicationController
 
 	def index
 		@top10 = App.joins(:top10s).where(released: true).order("rank").order("top10s.updated_at DESC").group("rank")
-    	@articles = App.where(released: true).limit(10).order("apps.updated_at DESC")
+    	@articles = App.joins(:images).where(released: true).limit(10).order("apps.updated_at DESC")
     	@categories = Category.all
     	@count = App.count(released: true)
     	@image = Image.where(app_id: @articles)
@@ -11,7 +11,7 @@ class GlobalsController < ApplicationController
 			top10: @top10,
   			articles: @articles,
   			categories: @categories,
-  			images: @image,
+  			images: @image.as_json,
   			total: @count
 			 }
 	end
