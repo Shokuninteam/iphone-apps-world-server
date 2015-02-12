@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
 		@images = Image.where(app_id: @articlesByCat)
 		render json: {
 			articles: @articlesByCat,
-			images: @images
+			images: @images.get_image_url(@image.id)
 		}
 	end
 

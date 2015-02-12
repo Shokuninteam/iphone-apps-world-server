@@ -9,9 +9,6 @@ class GlobalsController < ApplicationController
     	@macro=[]
    		@result = App.joins(:images).select("images.id AS id_image, apps.*").where(released: true).limit(10).order("apps.updated_at DESC").uniq
     	@categories = Category.all
-
-    		
-   
     	
 	    	@result.each do |i|
 	    		#@temp = get_image_url(i.id)
