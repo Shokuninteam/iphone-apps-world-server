@@ -5,7 +5,7 @@ class GlobalsController < ApplicationController
     	#@articles = App.joins(:images).where(released: true).limit(10).order("apps.updated_at DESC").uniq
     	@categories = Category.all
     	@count = App.count(released: true)
-    	
+
     	@result = App.joins(:images).select("images.id AS id_image, apps.*").where(released: true).limit(10).order("apps.updated_at DESC").uniq
     	@macro = []
    		@macro = get_articles_with_logo_image(@result)

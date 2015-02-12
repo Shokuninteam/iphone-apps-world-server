@@ -18,24 +18,26 @@ class ArticlesController < ApplicationController
 		@article = App.where(released: true, name:params[:name]).first
 		@pros = Pro.where(app_id: @article)
     	@cons = Con.where(app_id: @article)
-    	@images = Image.where(app_id: @article)
+    	#@images = Image.where(app_id: @article)
+    	@macro = []
+    	@macro = get_all_images_for_article(@article)
     	render json: {
     		article: @article,
     		pros: @pros,
     		cons: @cons,
-    		image: @images
+    		image: @macro
     	}
 	end
 
 	def showArticlesByCat
 		#@articlesByCat = App.joins(:category).where(released: true).where({categories: {name: params[:name]}}).limit(10)
-		@temp = App.joins(:category).where(released: true).where({categories: {name: params[:name]}})
+		@temp = App.joins(:category).joins(:images).select("images.id AS id_image, apps.*").where(released: true).where({categories: {name: params[:name]}})
 		@articlesByCat= @temp.limit(10)
-		@images = Image.where(app_id: @articlesByCat)
-		@count = @temp.count()
+		@articlesWithLogo = []
+		@articlesWithLogo = get_articles_with_logo_image(@articlesByCat)
+		@count = @temp.count(:id)
 		render json: {
-			articles: @articlesByCat,
-			images: @images,
+			articles: @articlesWithLogo,
 			total: @count
 		}
 
@@ -43,23 +45,22 @@ class ArticlesController < ApplicationController
 
 	def showPaginateArticlesByCat
 		@num = calcOffset(params[:page].to_i)
-		@articlesByCat = App.joins(:category).where(released: true).where({categories: {name: params[:name]}}).limit(10).offset(@num)
-		@images = Image.where(app_id: @articlesByCat)
-		render json: {
-			articles: @articlesByCat,
-			images: @images.get_image_url(@image.id)
-		}
+		@articlesByCat = App.joins(:category).joins(:images).select("images.id AS id_image, apps.*").where(released: true).where({categories: {name: params[:name]}}).limit(10).offset(@num)
+		@articlesWithLogo = []
+		@articlesWithLogo= get_articles_with_logo_image(@articlesByCat)
+		render json: @articlesWithLogo
+		
 	end
 
 
 	def searchArticles
-		@temp = App.where("name like ?", "%#{params[:name]}%").where(released: true).order("updated_at DESC")
+		@temp = App.joins(:images).select("images.id AS id_image, apps.*").where("apps.name like ?", "%#{params[:name]}%").where(released: true).order("updated_at DESC")
 		@articlesBySearch = @temp.limit(10)
-		@images = Image.where(app_id: @articlesBySearch)
-		@count = @temp.count()
+		@articlesWithLogo = []
+		@articlesWithLogo =  get_articles_with_logo_image(@articlesBySearch)
+		@count = @temp.count(:id)
 		render json: {
-			articles: @articlesBySearch,
-			images: @images,
+			articles: @articlesWithLogo,
 			total: @count
 		}
 
@@ -67,12 +68,10 @@ class ArticlesController < ApplicationController
 
 	def searchPaginateArticles
 		@num = calcOffset(params[:page].to_i)
-		@articlesBySearch = App.where("name like ?", "%#{params[:name]}%").where(released: true).order("updated_at DESC").offset(@num).limit(10)
-		@images = Image.where(app_id: @article)
-		render json: {
-			articles: @articlesBySearch,
-			images: @images
-		}
+		@articlesBySearch = App.joins(:images).select("images.id AS id_image, apps.*").where("name like ?", "%#{params[:name]}%").where(released: true).order("updated_at DESC").offset(@num).limit(10)
+		@articlesWithLogo = []
+		@articlesWithLogo = get_articles_with_logo_image(@articlesBySearch)
+		render json: @articlesWithLogo
 	end
 
 end
