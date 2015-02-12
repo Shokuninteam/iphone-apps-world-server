@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 #:images.id AS id_image aggrégé en +
   def get_articles_with_logo_image(apps)
     	
-    	apps.each do |i|
+    	apps.each do |app|
     		puts(get_image_url(app.id_image))
     		@urls = {}
     		@urls[:url] = get_image_url(app.id_image)
