@@ -10,10 +10,11 @@ class ApplicationController < ActionController::Base
 	end
 
 	 def get_image_url(id)
-	 	puts(id)
-    @image = Image.find(id)
-    @a = URI.join(request.url, @image.image.url)
-    return  @a
+	    @image = Image.find(id)
+	    @article = App.find(@image.app_id)
+	    @a = @image.image.url
+	    #@a.push(URI.join(request.url, @image.image.url), @article.id)
+    return  @a 
   end
 
 
