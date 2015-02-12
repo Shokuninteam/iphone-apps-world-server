@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     end
   end
 
-get 'image/:id' => 'application#get_url'
+#get 'image/:id' => 'application#get_url'
 
 get 'admins' => 'admins#index'
 

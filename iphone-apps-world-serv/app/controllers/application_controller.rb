@@ -6,14 +6,14 @@ class ApplicationController < ActionController::Base
 
 	def get_url
 		@url = get_image_url(params[:id])
-		render json: @url
+		return @url
 	end
 
 	 def get_image_url(id)
-    @image = Image.find(params[:id])
-    puts(@image.name)
+	 	puts(id)
+    @image = Image.find(id)
     @a = URI.join(request.url, @image.image.url)
-    return @a
+    return  @a
   end
 
 
