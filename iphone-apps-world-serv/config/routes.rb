@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
+get 'image/:id' => 'application#get_url'
+
 get 'admins' => 'admins#index'
 
 get 'top10s' => 'top10s#index'
