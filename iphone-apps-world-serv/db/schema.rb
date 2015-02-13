@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150206210258) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "apps", force: :cascade do |t|
     t.string   "name",                        null: false
     t.decimal  "price"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 20150206210258) do
     t.boolean  "released",    default: false
   end
 
-  add_index "apps", ["category_id"], name: "index_apps_on_category_id"
-  add_index "apps", ["name"], name: "index_apps_on_name", unique: true
+  add_index "apps", ["category_id"], name: "index_apps_on_category_id", using: :btree
+  add_index "apps", ["name"], name: "index_apps_on_name", unique: true, using: :btree
 
   create_table "apps_cons", id: false, force: :cascade do |t|
     t.integer "app_id"
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150206210258) do
     t.string   "name"
   end
 
-  add_index "categories", ["name"], name: "index_categories_on_name", unique: true
+  add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
   create_table "cons", force: :cascade do |t|
     t.string   "content"
@@ -53,7 +56,7 @@ ActiveRecord::Schema.define(version: 20150206210258) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "cons", ["app_id"], name: "index_cons_on_app_id"
+  add_index "cons", ["app_id"], name: "index_cons_on_app_id", using: :btree
 
   create_table "countries", force: :cascade do |t|
     t.string   "label"
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150206210258) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "countries", ["store_id"], name: "index_countries_on_store_id"
+  add_index "countries", ["store_id"], name: "index_countries_on_store_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "name"
@@ -75,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150206210258) do
     t.datetime "updated_at",         null: false
   end
 
-  add_index "images", ["app_id"], name: "index_images_on_app_id"
+  add_index "images", ["app_id"], name: "index_images_on_app_id", using: :btree
 
   create_table "pros", force: :cascade do |t|
     t.string   "content"
@@ -84,7 +87,7 @@ ActiveRecord::Schema.define(version: 20150206210258) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "pros", ["app_id"], name: "index_pros_on_app_id"
+  add_index "pros", ["app_id"], name: "index_pros_on_app_id", using: :btree
 
   create_table "stores", force: :cascade do |t|
     t.string   "baseRouterUrl"
@@ -99,15 +102,15 @@ ActiveRecord::Schema.define(version: 20150206210258) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "top10s", ["app_id"], name: "index_top10s_on_app_id"
+  add_index "top10s", ["app_id"], name: "index_top10s_on_app_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -117,7 +120,7 @@ ActiveRecord::Schema.define(version: 20150206210258) do
     t.boolean  "admin",                  default: false, null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

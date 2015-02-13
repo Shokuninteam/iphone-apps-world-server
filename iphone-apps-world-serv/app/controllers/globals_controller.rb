@@ -1,11 +1,11 @@
 class GlobalsController < ApplicationController
 
 	def index
-		@top10 = App.joins(:top10s).joins(:images).select("images.id AS id_image, apps.*").where(released: true).order("rank").order("top10s.updated_at DESC").group("rank")
+		@top10 = App.joins(:top10s).joins(:images).select("images.id AS id_image, apps.*").where(released: true).order("rank").order("top10s.updated_at DESC").group("rank").group("apps.id").group("images.id").group("top10s.updated_at")
     	#@articles = App.joins(:images).where(released: true).limit(10).order("apps.updated_at DESC").uniq
     	@categories = Category.all
     	@count = App.count(released: true)
-    	@result = App.joins(:images).select("images.id AS id_image, apps.*").where(released: true).limit(10).order("apps.updated_at DESC").uniq
+    	@result = App.joins(:images).select("images.id AS id_image, apps.*").where(released: true).limit(10).order("apps.updated_at DESC").group("apps.id").group("images.id")
     	
     	@macroArticles = []
    		@macroArticles = get_articles_with_logo_image(@result)
