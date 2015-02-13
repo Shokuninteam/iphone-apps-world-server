@@ -1,0 +1,26 @@
+<%= form_for @pro do |f|%>
+
+	<% if @pro.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@pro.errors.count, "error")%> prohibited this pro for being saved:
+			</h2>
+			<ul>
+				<% @pro.errors.full_messages.each do |msg| %>
+					<li><%= msg%></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="row">
+		<div class="large-5 large-offset-2 columns">
+			<%= f.label :content%>
+			<%= f.text_area :content %>
+	
+			<div class="button secondary">
+			<%= f.submit%>
+			</div>
+		</div>
+	</div>
+<%end%>

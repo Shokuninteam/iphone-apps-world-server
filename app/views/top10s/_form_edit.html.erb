@@ -1,0 +1,26 @@
+<%= form_for @top10 do |f|%>
+
+<% if @top10.errors.any? %>
+	<div id="error_explanation">
+		<h2>
+			<%= pluralize(@top10.errors.count, "error")%> prohibited this top10 for being saved:
+		</h2>
+		<ul>
+			<% @top10.errors.full_messages.each do |msg| %>
+			<li><%= msg%></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+
+	<div class="row">
+		<div class="large-5 large-offset-2 columns">
+			<%= f.label :rank%>
+			<%= f.number_field :rank %>
+	
+		 	<div class="button secondary">
+				<%= f.submit%>
+			</div>
+		</div>
+	</div>		
+<%end%>
